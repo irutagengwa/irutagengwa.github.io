@@ -1,14 +1,10 @@
-function changeText() {
-    document.getElementById("demo").innerHTML = "Hello JavaScript!";
-}
 // Slideshow functionality
 let slideIndex = 1;
-showSlides(slideIndex);
 
 // Auto move the slideshow every 3 seconds (adjust the interval as needed)
 setInterval(function() {
   plusSlides(1);
-}, 3000);
+}, 3000); // Adjusted the interval to 3000 milliseconds (3 seconds)
 
 function plusSlides(n) {
   showSlides(slideIndex += n);
@@ -33,3 +29,8 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Call showSlides with slideIndex set to 1 to display the first slide
+  showSlides(1);
+});
